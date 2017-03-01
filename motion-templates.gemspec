@@ -1,23 +1,20 @@
 # -*- encoding: utf-8 -*-
-VERSION = "1.0"
+require File.expand_path('../lib/motion-templates/version.rb', __FILE__)
 
 Gem::Specification.new do |spec|
   spec.name          = "motion-templates"
-  spec.version       = VERSION
-  spec.authors       = ["Liu Lantao"]
-  spec.email         = ["liulantao@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.version       = Motion::Templates::VERSION
+  spec.description   = %q{rubymotion templates}
+  spec.summary       = %q{rubymotion templates}
   spec.license       = ""
 
-  files = []
-  files << 'README.md'
-  files.concat(Dir.glob('lib/**/*.rb'))
-  spec.files         = files
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  spec.authors       = ["Liu Lantao"]
+  spec.email         = ["liulantao@gmail.com"]
+  spec.homepage      = "https://github.com/Lax/motion-templates"
+
+  spec.files         = Dir.glob('template/**/*') + Dir.glob('lib/**/*.rb')
+
+  spec.metadata     = { "rubymotion_template_dir" => "template" }
 
   spec.add_development_dependency "rake"
 end

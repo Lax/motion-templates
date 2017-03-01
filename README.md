@@ -1,24 +1,19 @@
 # motion-templates
 
-TODO: Write a gem description
+RubyMotion Templates
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'motion-templates'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install motion-templates
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ motion create --template=<circle> new_app
+
+    $ cd new_app
+    $ bundle install && rake pod:install
+
+    $ rake
 
 ## Contributing
 

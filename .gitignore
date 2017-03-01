@@ -16,3 +16,15 @@ nbproject
 .sass-cache
 .idea
 .dat*.*
+
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+template/*/files/Gemfile.lock
