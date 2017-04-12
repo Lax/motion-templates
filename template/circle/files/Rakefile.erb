@@ -14,8 +14,13 @@ $version_fingerprint = '%s/%s/%s' % [$short_version, $version, `git log -1 --for
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = File.basename(File.dirname __FILE__)
-  app.identifier = 'cc.mib.%s' % app.name
+  app.name = '<%= name %>'
+  app.identifier = 'com.your_domain_here.%s' % app.name.downcase.strip.gsub(/\s/, '_')
+
+  app.device_family = [:iphone, :ipad]
+  app.interface_orientations = [:portrait, :landscape_left, :landscape_right, :portrait_upside_down]
+
+  app.files += Dir.glob(File.join(app.project_dir, 'lib/**/*.rb'))
 
   app.info_plist['VersionFingerprint'] = $version_fingerprint
   # app.info_plist['UILaunchStoryboardName'] = 'Launch Screen'

@@ -1,0 +1,10 @@
+language: objective-c
+osx_image: xcode8.2
+before_install:
+  - gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+  - rvm get stable --auto-dotfiles && rvm use 2.4 --default --install --binary --fuzzy && gem install bundler
+  - (ruby --version)
+  - sudo motion update
+script:
+  - bundle update
+  - ./travis.sh
